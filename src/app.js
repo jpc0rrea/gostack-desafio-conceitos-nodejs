@@ -57,9 +57,6 @@ app.put("/repositories/:id", validateRepositoryId, (request, response) => {
 
   const repositoryIndex = request.repositoryIndex;
 
-  console.log(repositoryIndex);
-  console.log(repositories[repositoryIndex]);
-
   const likesQuantity = repositories[repositoryIndex].likes;
 
   const editedRepository = {
@@ -76,7 +73,7 @@ app.put("/repositories/:id", validateRepositoryId, (request, response) => {
 });
 
 app.delete("/repositories/:id", validateRepositoryId, (request, response) => {
-  repositories.splice(request.repositorieIndex, 1);
+  repositories.splice(request.repositoryIndex, 1);
 
   return response.status(204).send();
 });
